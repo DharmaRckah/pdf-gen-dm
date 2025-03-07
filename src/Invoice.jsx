@@ -29,6 +29,8 @@ const Invoice = () => {
       height,
     });
 
+    
+
     // Draw product details
     page.drawText('Product: Laptop', {
       x: 50,
