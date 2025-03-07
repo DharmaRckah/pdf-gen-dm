@@ -1,76 +1,7 @@
-// // src/Invoice.js
-// import React from 'react';
-// import { PDFDocument, rgb } from 'pdf-lib';
-// import dharma from "./assets/dharma.png";
 
-// const Invoice = () => {
-//   const generatePDF = async () => {
-//     // Create a new PDF document
-//     const pdfDoc = await PDFDocument.create();
-//     const page = pdfDoc.addPage([600, 400]);
-
-//     // Draw the title
-//     page.drawText('Invoice', {
-//       x: 200,
-//       y: 350,
-//       size: 30,
-//       color: rgb(0, 0, 0),
-//     });
-
-//     // Load the image
-//     const imageBytes = await fetch(dharma).then(res => res.arrayBuffer());
-//     const image = await pdfDoc.embedPng(imageBytes);
-//     const { width, height } = image.scale(0.5);
-
-//     // Draw the image
-//     page.drawImage(image, {
-//       x: 200,
-//       y: 200,
-//       width,
-//       height,
-//     });
-
-//     // Draw the description
-//     page.drawText('This is a sample invoice description.', {
-//       x: 150,
-//       y: 180,
-//       size: 12,
-//       color: rgb(0, 0, 0),
-//     });
-
-//     // Serialize the PDF document to bytes
-//     const pdfBytes = await pdfDoc.save();
-
-//     // Create a blob and open it in a new window
-//     const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-//     const url = URL.createObjectURL(blob);
-//     window.open(url);
-//   };
-
-//   return (
-//     <div className="p-4">
-//       <div className="border p-4">
-//         <h2 className="text-xl font-bold">Invoice</h2>
-//         <img src={dharma} alt="Sample" className="my-4" />
-//         <p className="text-gray-700">This is a sample invoice description.</p>
-//       </div>
-//       <button
-//         onClick={generatePDF}
-//         className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
-//       >
-//         Generate PDF
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default Invoice;
-
-// src/Invoice.js
-// src/Invoice.js
 import React from 'react';
 import { PDFDocument, rgb } from 'pdf-lib';
-import laptopImage from './assets/dharma.png'; // Replace with your laptop image path
+import laptopImage from './assets/dharma.png'; 
 
 const Invoice = () => {
   const generatePDF = async () => {
@@ -138,6 +69,7 @@ const Invoice = () => {
 
   return (
     <div className="p-4">
+      <div className='text-blue-500 m-4'><a href="https://github.com/DharmaRckah/pdf-gen-dm.git">get source code -Dharmendra git repo</a></div>
       <div className="border p-4">
         <h2 className="text-xl font-bold">Invoice</h2>
         <img src={laptopImage} alt="Laptop" className="my-4" />
